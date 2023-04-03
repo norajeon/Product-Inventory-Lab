@@ -9,15 +9,7 @@ import java.util.ArrayList;
 import static org.junit.jupiter.api.Assertions.*;
 
 class SneakerServiceTest {
-    SneakerService sneaky = new SneakerService();
-    Sneaker sneaker1 = sneaky.create("sneaker1", "brand1",
-            "sport1", 1, 10, 5);
-    Sneaker sneaker2 = sneaky.create("sneaker2", "brand2",
-            "sport2", 5, 15, 3);
-    Sneaker sneaker3 = sneaky.create("sneaker3", "brand3",
-            "sport3", 4, 3, 9);
-    Sneaker sneaker4 = sneaky.create("sneaker4", "brand4",
-            "sport4", 9, 12, 6);
+
 
     @Test
     public void createTest(){
@@ -57,40 +49,55 @@ class SneakerServiceTest {
 
     @Test
     public void testFind() {
-//        SneakerService sneakerService = new SneakerService();
-//        Sneaker sneaker1 = sneakerService.create("sneaker1", "brand1",
-//                "sport1", 1, 10, 5);
-//        Sneaker sneaker2 = sneakerService.create("sneaker2", "brand2",
-//                "sport2", 5, 15, 3);
-//        Sneaker sneaker3 = sneakerService.create("sneaker3", "brand3",
-//                "sport3", 4, 3, 9);
-//        Sneaker sneaker4 = sneakerService.create("sneaker4", "brand4",
-//                "sport4", 9, 12, 6);
+        SneakerService sneaky = new SneakerService();
+        sneaky.create("sneaker1", "brand1",
+                "sport1", 1, 10, 5);
+        sneaky.create("sneaker2", "brand2",
+                "sport2", 5, 15, 3);
+        Sneaker expected = sneaky.create("sneaker3", "brand3",
+                "sport3", 4, 3, 9);
+        sneaky.create("sneaker4", "brand4",
+                "sport4", 9, 12, 6);
+        sneaky.create("sneaker3", "brand3",
+                "sport3", 4, 3, 9);
+        Sneaker actual = sneaky.findSneaker(7);
 
-        Sneaker expected = sneaky.findSneaker(3);
-
-        Assertions.assertEquals(expected, sneaker3);
+        Assertions.assertEquals(actual, expected);
     }
 
     @Test
     public void testFindAll() {
-//        SneakerService sneaker = new SneakerService();
-//        Sneaker sneaker5 = sneaker.create("sneaker1", "brand1",
-//                "sport1", 1, 10, 5);
-//        Sneaker sneaker6 = sneaker.create("sneaker2", "brand2",
-//                "sport2", 5, 15, 3);
-//        Sneaker sneaker7 = sneaker.create("sneaker3", "brand3",
-//                "sport3", 4, 3, 9);
-//        Sneaker sneaker8 = sneaker.create("sneaker4", "brand4",
-//                "sport4", 9, 12, 6);
+        SneakerService sneaky = new SneakerService();
+        sneaky.create("sneaker1", "brand1",
+                "sport1", 1, 10, 5);
+        sneaky.create("sneaker2", "brand2",
+                "sport2", 5, 15, 3);
+        sneaky.create("sneaker3", "brand3",
+                "sport3", 4, 3, 9);
+        sneaky.create("sneaker4", "brand4",
+                "sport4", 9, 12, 6);
+        Integer expected = 4;
+        Sneaker[] sneakerArray = sneaky.findAll();
 
-        ArrayList<Sneaker> expected = new ArrayList<>();
-        expected.add(sneaker1);
-        expected.add(sneaker2);
-        expected.add(sneaker3);
-        expected.add(sneaker4);
+        Assertions.assertEquals(expected, sneakerArray.length);
+    }
 
-        Assertions.assertEquals(expected, sneaky.findAll());
+    @Test
+    public void testDelete() {
+        SneakerService sneaky = new SneakerService();
+        sneaky.create("sneaker1", "brand1",
+                "sport1", 1, 10, 5);
+        sneaky.create("sneaker2", "brand2",
+                "sport2", 5, 15, 3);
+        sneaky.create("sneaker3", "brand3",
+                "sport3", 4, 3, 9);
+        sneaky.create("sneaker4", "brand4",
+                "sport4", 9, 12, 6);
+        Integer expected = 3;
+        sneaky.delete(11);
+        Sneaker[] sneakerArray = sneaky.findAll();
+
+        Assertions.assertEquals(expected, sneakerArray.length);
     }
 
 }

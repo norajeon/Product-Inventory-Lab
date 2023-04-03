@@ -22,8 +22,6 @@ public class Sneaker {
         this.size = size;
     }
 
-
-
     public int getId() {
         return id;
     }

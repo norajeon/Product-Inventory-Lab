@@ -24,7 +24,8 @@ public class SneakerService {
             if (a.getId() == id) {
                 return a;
             }
-        } return null;
+        }
+        return null;
     }
 
     //read all
