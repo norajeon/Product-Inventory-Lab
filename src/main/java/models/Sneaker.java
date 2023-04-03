@@ -8,6 +8,19 @@ public class Sneaker {
     private int size;
     private int qty;
     private float price;
+    public Sneaker() {;
+    }
+
+    public Sneaker(int expectedId, String expectedName, String expectedBrand, String expectedSport, int expectedQty, float expectedPrice) {
+        this.id = expectedId;
+        this.name = expectedName;
+        this.brand = expectedBrand;
+        this.sport = expectedSport;
+        this.qty = expectedQty;
+        this.price = expectedPrice;
+    }
+
+
 
     public int getId() {
         return id;
