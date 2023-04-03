@@ -5,19 +5,21 @@ public class Sneaker {
     private String name;
     private String brand;
     private String sport;
-    private int size;
+    private double size;
     private int qty;
     private float price;
+
     public Sneaker() {;
     }
 
-    public Sneaker(int expectedId, String expectedName, String expectedBrand, String expectedSport, int expectedQty, float expectedPrice) {
+    public Sneaker(int expectedId, String expectedName, String expectedBrand, String expectedSport, int expectedQty, float expectedPrice, double size) {
         this.id = expectedId;
         this.name = expectedName;
         this.brand = expectedBrand;
         this.sport = expectedSport;
         this.qty = expectedQty;
         this.price = expectedPrice;
+        this.size = size;
     }
 
 
@@ -46,11 +48,11 @@ public class Sneaker {
         this.sport = sport;
     }
 
-    public int getSize() {
+    public double getSize() {
         return size;
     }
 
-    public void setSize(int size) {
+    public void setSize(double size) {
         this.size = size;
     }
 

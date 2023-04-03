@@ -62,7 +62,7 @@ class SneakerTest {
     @Test
     public void setSizeTest() {
         // given (1)
-        int expected = 5;
+        double expected = 5.0;
 
         // when (2)
         Sneaker testSneaker = new Sneaker();
@@ -106,12 +106,13 @@ class SneakerTest {
         String expectedName = "Stan Smith";
         String expectedBrand = "Adidas";
         String expectedSport = "Tennnis";
+        double expectedSize = 10.5;
         int expectedQty = 10;
         float expectedPrice = 80.00f;
 
         // (3)
         Sneaker testSneaker = new Sneaker(expectedId, expectedName, expectedBrand,
-                expectedSport, expectedQty,expectedPrice);
+                expectedSport, expectedQty,expectedPrice, expectedSize);
 
         // (4)
         Assertions.assertEquals(expectedId, testSneaker.getId());
@@ -120,6 +121,7 @@ class SneakerTest {
         Assertions.assertEquals(expectedSport, testSneaker.getSport());
         Assertions.assertEquals(expectedQty, testSneaker.getQty());
         Assertions.assertEquals(expectedPrice, testSneaker.getPrice());
+        Assertions.assertEquals(expectedSize, testSneaker.getSize());
     }
 
 }
