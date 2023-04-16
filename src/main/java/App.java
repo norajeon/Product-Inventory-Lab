@@ -138,6 +138,7 @@ public class App {
 
     public String findSneaker(int id) {
         Sneaker check = sneakerService.findSneaker(id);
+        System.out.println("Whiskey name:"+ check.getName());
         return check.toString();
 
     }
@@ -166,6 +167,7 @@ public class App {
 
     public String findWhiskey(int id) {
         Whiskey check = whiskeyService.findWhiskey(id);
+        System.out.println("Whiskey name:"+ check.getName());
         return check.toString();
 
     }
