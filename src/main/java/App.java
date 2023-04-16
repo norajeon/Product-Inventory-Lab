@@ -25,7 +25,7 @@ public class App {
         boolean end = false;
         while (!end) {
             try {
-                String userInput = console.getStringInput("1. Sneaker\n2.Whiskey\n'exit to Exit");
+                String userInput = console.getStringInput("1. Sneaker\n 2.Whiskey\n'exit to Exit");
                 switch (userInput) {
                     case "1":
                         sneakerMenu();
@@ -99,10 +99,10 @@ public class App {
                         break;
                     case "2":
                         Integer check = console.getIntegerInput("Enter ID to check:");
-                        findWhiskey(check);
+                        System.out.println(findWhiskey(check));
                         break;
                     case "3":
-                        findAllWhiskey();
+                        System.out.println(findAllWhiskey());
                         break;
                     case "4":
                         Integer deletion = console.getIntegerInput("Enter ID to delete:");
