@@ -53,6 +53,7 @@ public class App {
                         "2. Find Sneaker by ID\n" +
                         "3. Find All Sneakers\n" +
                         "4. Delete Sneaker by ID\n" +
+                        "5. Update Sneaker\n" +
                         "exit to Exit");
                 switch (choice) {
                     case "1":
@@ -68,6 +69,9 @@ public class App {
                     case "4":
                         Integer deletion = console.getIntegerInput("Enter ID to delete:");
                         deleteSneaker(deletion);
+                        break;
+                    case "5":
+                        updateSneaker();
                         break;
                     case "exit":
                         sneakerEnd = true;
