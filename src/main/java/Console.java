@@ -1,13 +1,13 @@
 //package io;
-//
-//public class Console {
-//    public static void printWelcome(){
-//        System.out.println("" +
-//                "**************************************************" +
-//                "***           Welcome and Bienvenue            ***" +
-//                "***                    to                      ***" +
-//                "***          ZipCo Inventory Manager           ***" +
-//                "**************************************************");
-//    }
-//
-//}
+
+public class Console {
+    public static void printWelcome(){
+        System.out.println("" +
+                "**************************************************\n" +
+                "***           Welcome and Bienvenue            ***\n" +
+                "***                    to                      ***\n" +
+                "***          ZipCo Inventory Manager           ***\n" +
+                "**************************************************\n");
+    }
+
+}
