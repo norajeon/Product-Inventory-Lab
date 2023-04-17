@@ -25,7 +25,9 @@ public class App {
         boolean end = false;
         while (!end) {
             try {
-                String userInput = console.getStringInput("1. Sneaker\n 2.Whiskey\n'exit to Exit");
+                String userInput = console.getStringInput("1. Sneaker\n" +
+                        "2. Whiskey\n" +
+                        "'exit to Exit");
                 switch (userInput) {
                     case "1":
                         sneakerMenu();
@@ -38,7 +40,10 @@ public class App {
                         break;
                 }
             } catch (InputMismatchException e) {
-                console.getStringInput("Invalid. Try Again. \n1. Sneaker\n2.Whiskey\n'exit to Exit");
+                console.getStringInput("Invalid. Try Again. \n" +
+                        "1. Sneaker\n" +
+                        "2. Whiskey\n" +
+                        "'exit to Exit");
             }
 
         } //while loop
@@ -49,7 +54,8 @@ public class App {
         boolean sneakerEnd = false;
         while (!sneakerEnd) {
             try {
-                String choice = console.getStringInput("1. Create Sneaker\n" +
+                String choice = console.getStringInput(
+                        "1. Create Sneaker\n" +
                         "2. Find Sneaker by ID\n" +
                         "3. Find All Sneakers\n" +
                         "4. Delete Sneaker by ID\n" +
@@ -122,7 +128,8 @@ public class App {
                 }
             }
             catch (InputMismatchException e) {
-                console.getStringInput("Invalid choice. \n1. Create Whiskey\n" +
+                console.getStringInput("Invalid choice. \n" +
+                        "1. Create Whiskey\n" +
                         "2. Find Whiskey by ID\n" +
                         "3. Find All Whiskey\n" +
                         "4. Delete Whiskey by ID\n" +
@@ -132,9 +139,9 @@ public class App {
 
     }
     public Sneaker addSneaker() {
-        String name = console.getStringInput(" Enter name:");
-        String brand = console.getStringInput(" Enter brand:");
-        String sport = console.getStringInput(" Enter sport:");
+        String name = console.getStringInput("Enter name:");
+        String brand = console.getStringInput("Enter brand:");
+        String sport = console.getStringInput("Enter sport:");
         Integer qty = console.getIntegerInput("Enter quantity:");
         Float price = console.getFloatInput("Enter price:");
         Double size = console.getDoubleInput("Enter size:");
@@ -215,57 +222,57 @@ public class App {
     public void updateSneakerName() {
         Integer idofSneaker = console.getIntegerInput("Enter ID of Sneaker to Update:");
         Sneaker toUpdate = sneakerService.findSneaker(idofSneaker);
-        System.out.println("Current Sneaker Name:" + toUpdate.getName());
+        System.out.println("Current Sneaker Name: " + toUpdate.getName());
         String updatedName = console.getStringInput("Update to:");
         toUpdate.setName(updatedName);
-        System.out.println("New Sneaker Name:" + toUpdate.getName());
+        System.out.println("New Sneaker Name: " + toUpdate.getName());
 
     }
 
     public void updateSneakerBrand() {
         Integer idofSneaker = console.getIntegerInput("Enter ID of Sneaker to Update:");
         Sneaker toUpdate = sneakerService.findSneaker(idofSneaker);
-        System.out.println("Current Sneaker Brand:" + toUpdate.getBrand());
+        System.out.println("Current Sneaker Brand: " + toUpdate.getBrand());
         String updatedBrand = console.getStringInput("Update to:");
         toUpdate.setBrand(updatedBrand);
-        System.out.println("New Sneaker Brand:" + toUpdate.getBrand());
+        System.out.println("New Sneaker Brand: " + toUpdate.getBrand());
 
     }
 
     public void updateSneakerSport() {
         Integer idofSneaker = console.getIntegerInput("Enter ID of Sneaker to Update:");
         Sneaker toUpdate = sneakerService.findSneaker(idofSneaker);
-        System.out.println("Current Sneaker Sport:" + toUpdate.getSport());
+        System.out.println("Current Sneaker Sport: " + toUpdate.getSport());
         String updatedSport = console.getStringInput("Update to:");
         toUpdate.setSport(updatedSport);
-        System.out.println("New Sneaker Price:" + toUpdate.getSport());
+        System.out.println("New Sneaker Price: " + toUpdate.getSport());
     }
 
     public void updateSneakerQty() {
         Integer idofSneaker = console.getIntegerInput("Enter ID of Sneaker to Update:");
         Sneaker toUpdate = sneakerService.findSneaker(idofSneaker);
-        System.out.println("Current Sneaker Quantity:" + toUpdate.getQty());
+        System.out.println("Current Sneaker Quantity: " + toUpdate.getQty());
         Integer updatedQuantity = console.getIntegerInput("Update to:");
         toUpdate.setQty(updatedQuantity);
-        System.out.println("New Sneaker Quantity:" + toUpdate.getQty());
+        System.out.println("New Sneaker Quantity: " + toUpdate.getQty());
     }
 
 
     public void updateSneakerPrice() {
         Integer idofSneaker = console.getIntegerInput("Enter ID of Sneaker to Update:");
         Sneaker toUpdate = sneakerService.findSneaker(idofSneaker);
-        System.out.println("Current Sneaker Price:" + toUpdate.getPrice());
+        System.out.println("Current Sneaker Price: " + toUpdate.getPrice());
         Float updatedPrice = console.getFloatInput("Update to:");
         toUpdate.setPrice(updatedPrice);
-        System.out.println("New Sneaker Price:" + toUpdate.getPrice());
+        System.out.println("New Sneaker Price: " + toUpdate.getPrice());
     }
     public void updateSneakerSize() {
         Integer idofSneaker = console.getIntegerInput("Enter ID of Sneaker to Update:");
         Sneaker toUpdate = sneakerService.findSneaker(idofSneaker);
-        System.out.println("Current Sneaker Size:" + toUpdate.getSize());
+        System.out.println("Current Sneaker Size: " + toUpdate.getSize());
         Double updatedSize = console.getDoubleInput("Update to:");
         toUpdate.setSize(updatedSize);
-        System.out.println("New Sneaker Size:" + toUpdate.getSize());
+        System.out.println("New Sneaker Size: " + toUpdate.getSize());
     }
 
 
@@ -283,7 +290,7 @@ public class App {
 
     public String findWhiskey(int id) {
         Whiskey check = whiskeyService.findWhiskey(id);
-        System.out.println("Whiskey name:"+ check.getName());
+        System.out.println("Whiskey name: "+ check.getName());
         return check.toString();
 
     }
@@ -295,7 +302,7 @@ public class App {
 
     public String deleteWhiskey(int id) {
         whiskeyService.delete(id);
-        return "Deleted sneaker id#:" + id;
+        return "Deleted sneaker id#: " + id;
 
     }
 
@@ -337,30 +344,30 @@ public class App {
     public void updateName() {
         Integer idofWhiskey = console.getIntegerInput("Enter ID of Whiskey to Update:");
         Whiskey toUpdate = whiskeyService.findWhiskey(idofWhiskey);
-        System.out.println("Current Whiskey Name:" + toUpdate.getName());
+        System.out.println("Current Whiskey Name: " + toUpdate.getName());
         String updatedName = console.getStringInput("Update to:");
         toUpdate.setName(updatedName);
-        System.out.println("New Whiskey Name:" + toUpdate.getName());
+        System.out.println("New Whiskey Name: " + toUpdate.getName());
 
     }
 
     public void updateBrand() {
         Integer idofWhiskey = console.getIntegerInput("Enter ID of Whiskey to Update:");
         Whiskey toUpdate = whiskeyService.findWhiskey(idofWhiskey);
-        System.out.println("Current Whiskey Brand:" + toUpdate.getBrand());
+        System.out.println("Current Whiskey Brand: " + toUpdate.getBrand());
         String updatedBrand = console.getStringInput("Update to:");
         toUpdate.setBrand(updatedBrand);
-        System.out.println("New Whiskey Brand:" + toUpdate.getBrand());
+        System.out.println("New Whiskey Brand: " + toUpdate.getBrand());
 
     }
 
     public void updatePrice() {
         Integer idofWhiskey = console.getIntegerInput("Enter ID of Whiskey to Update:");
         Whiskey toUpdate = whiskeyService.findWhiskey(idofWhiskey);
-        System.out.println("Current Whiskey Price:" + toUpdate.getPrice());
+        System.out.println("Current Whiskey Price: " + toUpdate.getPrice());
         Double updatedPrice = console.getDoubleInput("Update to:");
         toUpdate.setPrice(updatedPrice);
-        System.out.println("New Whiskey Price:" + toUpdate.getPrice());
+        System.out.println("New Whiskey Price: " + toUpdate.getPrice());
     }
 
 
