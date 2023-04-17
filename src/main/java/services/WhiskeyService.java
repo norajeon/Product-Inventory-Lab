@@ -81,7 +81,7 @@ public class WhiskeyService {
         writer.close();
     }
 
-    private void loadData(){
+    public void loadData(){
         // (1)
         String csvFile = "Whiskey.csv";
         String line = "";

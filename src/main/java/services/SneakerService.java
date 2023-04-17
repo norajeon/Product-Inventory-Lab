@@ -90,7 +90,7 @@ public class SneakerService {
     }
 
 
-    private void loadData(){
+    public void loadData(){
         // (1)
         String csvFile = "Sneaker.csv";
         String line = "";

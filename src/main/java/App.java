@@ -4,6 +4,7 @@ import services.SneakerService;
 import services.WhiskeyService;
 
 import java.io.FileWriter;
+import java.io.IOException;
 import java.util.*;
 
 public class App {
@@ -27,6 +28,8 @@ public class App {
             try {
                 String userInput = console.getStringInput("1. Sneaker\n" +
                         "2. Whiskey\n" +
+                        "3. Save Files\n" +
+                        "4. Load Files\n" +
                         "'exit to Exit");
                 switch (userInput) {
                     case "1":
@@ -34,6 +37,14 @@ public class App {
                         break;
                     case "2":
                         whiskeyMenu();
+                        break;
+                    case "3":
+                        sneakerService.saveFile();
+                        whiskeyService.saveFile();
+                        break;
+                    case "4":
+                        sneakerService.loadData();
+                        whiskeyService.loadData();
                         break;
                     case "exit":
                         end = true;
@@ -44,6 +55,8 @@ public class App {
                         "1. Sneaker\n" +
                         "2. Whiskey\n" +
                         "'exit to Exit");
+            } catch (IOException e) {
+                throw new RuntimeException(e);
             }
 
         } //while loop
